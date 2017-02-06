@@ -1,7 +1,7 @@
 ext{
     // Android
     buildToolsVersion = '25.0.2'
-    minSdkVersion = 11
+    minSdkVersion = 16
     targetSdkVersion = 25
     compileSdkVersion = 25
     supportSdkVersion = '25.0.1'

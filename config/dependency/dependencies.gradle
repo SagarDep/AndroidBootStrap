@@ -1,4 +1,4 @@
-ext{
+ext {
     // Libraries
     daggerVersion = '2.8'
     javaxAnnotationVersion = '10.0-b28'
@@ -7,25 +7,38 @@ ext{
 
     okHttpVersion = '3.4.2'
     retrofitVersion = '2.1.0'
+    retrofitRxAdapterVersion = '1.0.0'
+
+    rxVersion = '2.0.1'
+
+    stethoVersion = '1.4.1'
 
     junit = '4.12'
     mockito = '2.3.0'
 
     dependenciesMap = [
-            supportAppCompatV7       : "com.android.support:appcompat-v7:$supportSdkVersion",
-            recyclerViewV7           : "com.android.support:recyclerview-v7:$supportSdkVersion",
-            butterKnife              : "com.jakewharton:butterknife:$butterKnifeVersion",
+            supportAppCompatV7   : "com.android.support:appcompat-v7:$supportSdkVersion",
+            recyclerViewV7       : "com.android.support:recyclerview-v7:$supportSdkVersion",
+            butterKnife          : "com.jakewharton:butterknife:$butterKnifeVersion",
 
-            dagger                   : "com.google.dagger:dagger:$daggerVersion",
-            dagger_compiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
-            javax_annotation         : "org.glassfish:javax.annotation:$javaxAnnotationVersion",
+            dagger               : "com.google.dagger:dagger:$daggerVersion",
+            dagger_compiler      : "com.google.dagger:dagger-compiler:$daggerVersion",
+            javax_annotation     : "org.glassfish:javax.annotation:$javaxAnnotationVersion",
 
-            gson                     : "com.google.code.gson:gson:2.8.0",
-            okHttp                   : "com.squareup.okhttp3:okhttp:$okHttpVersion",
-            retrofit                 : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofitGsonConverter    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            gson                 : "com.google.code.gson:gson:2.8.0",
+            okHttp               : "com.squareup.okhttp3:okhttp:$okHttpVersion",
 
-            junit                    : "junit:junit:$junit",
-            mockito                  : "org.mockito:mockito-core:$mockito",
+            okHttpLog            : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            stetho               : "com.facebook.stetho:stetho:$stethoVersion",
+            stethoOkhttp3        : "com.facebook.stetho:stetho-okhttp3:$stethoVersion",
+
+            retrofit             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRxAdapter    : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofitRxAdapterVersion",
+
+            rxandroid            : "io.reactivex.rxjava2:rxandroid:$rxVersion",
+            junit                : "junit:junit:$junit",
+            mockito              : "org.mockito:mockito-core:$mockito",
     ]
 }
+

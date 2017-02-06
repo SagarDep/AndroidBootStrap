@@ -1,7 +1,7 @@
 package name.gudong.bootstrap.frame;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 
 import javax.inject.Inject;
 
@@ -10,9 +10,9 @@ import javax.inject.Inject;
  * Contact with gudong.name@gmail.com.
  */
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements MvpView {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements MvpView{
     @Inject
-    P mPresenter;
+    protected P mPresenter;
 
     protected P getPresenter() {
         return mPresenter;
@@ -20,6 +20,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     @Override
     public Context getMvpContext() {
-        return this;
+        return getActivity();
     }
 }

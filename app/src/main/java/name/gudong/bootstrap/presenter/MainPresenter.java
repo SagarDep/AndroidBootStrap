@@ -1,8 +1,8 @@
 package name.gudong.bootstrap.presenter;
 
-import name.gudong.bootstrap.domain.UserApi;
+import javax.inject.Inject;
+
 import name.gudong.bootstrap.frame.BasePresenter;
-import name.gudong.bootstrap.model.data.UserEntity;
 
 /**
  * Created by GuDong on 10/12/2016 00:20.
@@ -10,9 +10,7 @@ import name.gudong.bootstrap.model.data.UserEntity;
  */
 
 public class MainPresenter extends BasePresenter {
-    private UserApi mUserApi;
-
-    public void loadUserInfo() {
-        UserEntity entity = mUserApi.loadUserInfo();
+    @Inject
+    public MainPresenter() {
     }
 }

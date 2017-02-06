@@ -1,4 +1,7 @@
 # AndroidBootStrap
+
+[![Master branch build status](https://travis-ci.org/maoruibin/AndroidBootStrap.svg?branch=master)](https://travis-ci.org/maoruibin/AndroidBootStrap)
+
 个人的 Android 快速开发架构基础。
 
 ## 目录结构

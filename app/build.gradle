@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+
+apply from: '../config/quality/quality.gradle'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "name.gudong.bootstrap"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    def dependenciesMap = rootProject.ext.dependenciesMap
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile dependenciesMap.supportAppCompatV7
+    compile dependenciesMap.butterKnife
+
+    compile dependenciesMap.gson
+    compile dependenciesMap.okHttp
+    compile dependenciesMap.retrofit
+    compile dependenciesMap.retrofitGsonConverter
+
+    testCompile dependenciesMap.junit
+    testCompile dependenciesMap.mockito
+}

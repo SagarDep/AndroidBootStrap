@@ -1,0 +1,31 @@
+ext{
+    // Libraries
+    daggerVersion = '2.8'
+    javaxAnnotationVersion = '10.0-b28'
+
+    butterKnifeVersion = '8.4.0'
+
+    okHttpVersion = '3.4.2'
+    retrofitVersion = '2.1.0'
+
+    junit = '4.12'
+    mockito = '2.3.0'
+
+    dependenciesMap = [
+            supportAppCompatV7       : "com.android.support:appcompat-v7:$supportSdkVersion",
+            recyclerViewV7           : "com.android.support:recyclerview-v7:$supportSdkVersion",
+            butterKnife              : "com.jakewharton:butterknife:$butterKnifeVersion",
+
+            dagger                   : "com.google.dagger:dagger:$daggerVersion",
+            dagger_compiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
+            javax_annotation         : "org.glassfish:javax.annotation:$javaxAnnotationVersion",
+
+            gson                     : "com.google.code.gson:gson:2.8.0",
+            okHttp                   : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            retrofit                 : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConverter    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+            junit                    : "junit:junit:$junit",
+            mockito                  : "org.mockito:mockito-core:$mockito",
+    ]
+}

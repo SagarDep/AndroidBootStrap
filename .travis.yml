@@ -24,13 +24,13 @@ before_script:
 script:
   - android-wait-for-emulator
   - adb shell input keyevent 82
-#  - bash config/ci.sh
+  - bash config/ci.sh
 
 notifications:
   email:
     - gudong.name@gmail.com
-
-cache:
-  directories:
-    - $HOME/.m2
-    - $HOME/.gradle
+#
+#cache:
+#  directories:
+#    - $HOME/.m2
+#    - $HOME/.gradle

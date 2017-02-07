@@ -5,7 +5,7 @@ package name.gudong.bootstrap.frame;
  * Contact with gudong.name@gmail.com.
  */
 
-public abstract class BasePresenter <V extends MvpView> {
+public abstract class BasePresenter<V extends MvpView> {
     private static final String TAG = "BasePresenter";
     private V mMvpView;
 

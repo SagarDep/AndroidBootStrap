@@ -14,6 +14,7 @@ import dagger.Provides;
  * Contact with gudong.name@gmail.com.
  */
 
+@Singleton
 @Module
 public class AppModule {
     private final Application mApplication;

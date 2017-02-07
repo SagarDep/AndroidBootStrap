@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * Contact with gudong.name@gmail.com.
  */
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements MvpView{
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements MvpView {
     @Inject
     protected P mPresenter;
 

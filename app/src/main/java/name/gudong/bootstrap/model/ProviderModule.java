@@ -7,6 +7,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.Date;
 
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -20,6 +21,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 @Module
 public class ProviderModule {
+
+//    @Singleton
+    @Provides
+    GankApi provideGankApi(final Retrofit retrofit) {
+        return retrofit.create(GankApi.class);
+    }
+
+//    @Singleton
     @Provides
     Retrofit provideRetrofit(final OkHttpClient okHttpClient,
                              final Gson gson) {
@@ -31,13 +40,15 @@ public class ProviderModule {
                 .build();
     }
 
+//    @Singleton
     @Provides
     Gson provideGson() {
         final GsonBuilder builder = new GsonBuilder();
-        builder.registerTypeAdapter(Date.class,new DateDeserializer());
+        builder.registerTypeAdapter(Date.class, new DateDeserializer());
         return builder.create();
     }
 
+//    @Singleton
     @Provides
     OkHttpClient provideHttpClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

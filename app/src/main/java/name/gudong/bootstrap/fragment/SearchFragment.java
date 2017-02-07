@@ -33,7 +33,7 @@ public final class SearchFragment extends BaseFragment<SearchPresenter> implemen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_layout_search, null);
         ButterKnife.bind(this, view);
-        mBtAction = ButterKnife.findById(view,R.id.bt_action);
+        mBtAction = ButterKnife.findById(view, R.id.bt_action);
         mBtAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

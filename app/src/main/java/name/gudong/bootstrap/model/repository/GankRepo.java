@@ -1,7 +1,5 @@
 package name.gudong.bootstrap.model.repository;
 
-import javax.inject.Inject;
-
 import io.reactivex.Observable;
 import name.gudong.bootstrap.model.GankApi;
 import name.gudong.model.entity.GankList;
@@ -13,12 +11,12 @@ import name.gudong.model.entity.GankList;
 
 public class GankRepo {
     GankApi mApi;
-    @Inject
+
     public GankRepo(GankApi gankApi) {
         this.mApi = gankApi;
     }
 
-    public Observable<GankList> searchGank(String query){
-        return mApi.searchGank(query,"Android",10,10);
+    public Observable<GankList> searchGank(String query) {
+        return mApi.searchGank(query, "Android", 10, 10);
     }
 }

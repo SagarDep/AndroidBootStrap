@@ -10,9 +10,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import name.gudong.bootstrap.frame.BasePresenter;
-import name.gudong.model.entity.GankList;
 import name.gudong.bootstrap.model.repository.GankRepo;
 import name.gudong.bootstrap.view.SearchView;
+import name.gudong.model.entity.GankList;
 
 
 public final class SearchPresenter extends BasePresenter<SearchView> {
@@ -26,9 +26,7 @@ public final class SearchPresenter extends BasePresenter<SearchView> {
 
 
     public void searchGankInfo(String key) {
-        repo.searchGank(key)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<GankList>() {
+        repo.searchGank(key).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<GankList>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.i(TAG, "msg onSubscribe");
@@ -45,7 +43,6 @@ public final class SearchPresenter extends BasePresenter<SearchView> {
             @Override
             public void onError(Throwable e) {
                 Log.i(TAG, "msg " + e.getMessage());
-                e.printStackTrace();
             }
 
             @Override

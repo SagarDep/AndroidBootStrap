@@ -26,8 +26,9 @@ android {
 dependencies {
     def dependenciesMap = rootProject.ext.dependenciesMap
 
-    testCompile dependenciesMap.junit
-    testCompile dependenciesMap.mockito
+    //
+    compile dependenciesMap.junit
+    compile dependenciesMap.mockito
 
     compile dependenciesMap.gson
     compile dependenciesMap.okHttp

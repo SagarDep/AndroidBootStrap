@@ -11,9 +11,9 @@ import dagger.Component;
 
 @Singleton
 @Component(modules = {
-        ProviderModule.class,
-        AppModule.class
-})
+            ProviderModule.class,
+            AppModule.class
+        })
 public interface AppComponent {
 
 }

@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.model.data;
+package name.gudong.model.entity;
 
 import java.util.List;
 

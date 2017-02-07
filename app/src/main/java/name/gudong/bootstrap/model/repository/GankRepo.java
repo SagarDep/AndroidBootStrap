@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import name.gudong.bootstrap.model.GankApi;
-import name.gudong.bootstrap.model.data.GankList;
+import name.gudong.model.entity.GankList;
 
 /**
  * Created by GuDong on 10/12/2016 00:37.

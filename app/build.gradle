@@ -35,26 +35,14 @@ dependencies {
     compile dependenciesMap.supportAppCompatV7
     compile dependenciesMap.butterKnife
 
-    compile dependenciesMap.gson
-    compile dependenciesMap.okHttp
-
-    compile dependenciesMap.okHttpLog
-    compile dependenciesMap.stetho
-    compile dependenciesMap.stethoOkhttp3
-
-    compile dependenciesMap.retrofit
-    compile dependenciesMap.retrofitGsonConverter
-
-    testCompile dependenciesMap.junit
-    testCompile dependenciesMap.mockito
 
     compile dependenciesMap.dagger
     apt dependenciesMap.dagger_compiler
     provided dependenciesMap.javax_annotation
 
-    compile dependenciesMap.gson
-
     compile dependenciesMap.rxandroid
     compile dependenciesMap.retrofitRxAdapter
+
+    compile project(":model")
 
 }

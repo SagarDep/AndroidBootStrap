@@ -1,7 +1,7 @@
 package name.gudong.bootstrap.model;
 
 import io.reactivex.Observable;
-import name.gudong.bootstrap.model.data.GankList;
+import name.gudong.model.entity.GankList;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 

@@ -10,7 +10,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import name.gudong.bootstrap.frame.BasePresenter;
-import name.gudong.bootstrap.model.data.GankList;
+import name.gudong.model.entity.GankList;
 import name.gudong.bootstrap.model.repository.GankRepo;
 import name.gudong.bootstrap.view.SearchView;
 

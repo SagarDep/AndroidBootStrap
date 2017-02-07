@@ -5,6 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import java.util.Date;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -32,13 +34,17 @@ public class ProviderModule {
     @Provides
     Gson provideGson() {
         final GsonBuilder builder = new GsonBuilder();
-        return builder.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").create();
+        builder.registerTypeAdapter(Date.class,new DateDeserializer());
+        return builder.create();
     }
 
     @Provides
     OkHttpClient provideHttpClient() {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         final OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.addInterceptor(new HttpLoggingInterceptor());
+        builder.addInterceptor(logging);
         builder.addNetworkInterceptor(new StethoInterceptor());
         return builder.build();
     }

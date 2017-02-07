@@ -4,8 +4,8 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply from: '../config/quality/quality.gradle'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "name.gudong.bootstrap"
         minSdkVersion rootProject.ext.minSdkVersion

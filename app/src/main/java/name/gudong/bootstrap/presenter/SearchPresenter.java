@@ -45,6 +45,7 @@ public final class SearchPresenter extends BasePresenter<SearchView> {
             @Override
             public void onError(Throwable e) {
                 Log.i(TAG, "msg " + e.getMessage());
+                e.printStackTrace();
             }
 
             @Override

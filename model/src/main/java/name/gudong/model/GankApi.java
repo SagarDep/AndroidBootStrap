@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.model;
+package name.gudong.model;
 
 import io.reactivex.Observable;
 import name.gudong.model.entity.GankList;

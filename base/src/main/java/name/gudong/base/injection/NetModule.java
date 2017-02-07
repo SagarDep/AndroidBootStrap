@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.model;
+package name.gudong.base.injection;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.Gson;
@@ -8,8 +8,13 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import java.util.Date;
 
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
+import name.gudong.model.DateDeserializer;
+import name.gudong.model.GankApi;
+import name.gudong.model.GankRepo;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -20,19 +25,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Contact with gudong.name@gmail.com.
  */
 @Module
-public class ProviderModule {
+public class NetModule {
 
-//    @Singleton
+    @Singleton
+    @Provides
+    GankRepo provideGankRepo(GankApi gankApi) {
+        return new GankRepo(gankApi);
+    }
+
+    @Singleton
     @Provides
     GankApi provideGankApi(final Retrofit retrofit) {
         return retrofit.create(GankApi.class);
     }
 
-//    @Singleton
+    @Singleton
     @Provides
     Retrofit provideRetrofit(final OkHttpClient okHttpClient,
                              final Gson gson) {
-
         return new Retrofit.Builder().baseUrl("http://gank.io/api/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -40,7 +50,7 @@ public class ProviderModule {
                 .build();
     }
 
-//    @Singleton
+    @Singleton
     @Provides
     Gson provideGson() {
         final GsonBuilder builder = new GsonBuilder();
@@ -48,7 +58,7 @@ public class ProviderModule {
         return builder.create();
     }
 
-//    @Singleton
+    @Singleton
     @Provides
     OkHttpClient provideHttpClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

@@ -1,7 +1,6 @@
-package name.gudong.bootstrap.model.repository;
+package name.gudong.model;
 
 import io.reactivex.Observable;
-import name.gudong.bootstrap.model.GankApi;
 import name.gudong.model.entity.GankList;
 
 /**

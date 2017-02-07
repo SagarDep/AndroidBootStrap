@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.fragment;
+package name.gudong.bootstrap.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import name.gudong.bootstrap.BootStrapApp;
 import name.gudong.bootstrap.R;
 import name.gudong.bootstrap.component.DaggerSearchComponent;
 import name.gudong.bootstrap.frame.BaseFragment;
@@ -24,7 +25,7 @@ public final class SearchFragment extends BaseFragment<SearchPresenter> implemen
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DaggerSearchComponent.builder().build().inject(this);
+        DaggerSearchComponent.builder().appComponent(BootStrapApp.get().getAppComponent()).build().inject(this);
         mPresenter.attachView(this);
     }
 

@@ -1,10 +1,9 @@
 package name.gudong.bootstrap.component;
 
 import dagger.Component;
-import name.gudong.bootstrap.fragment.SearchFragment;
+import name.gudong.bootstrap.ui.SearchFragment;
 import name.gudong.bootstrap.injection.PerActivity;
-import name.gudong.bootstrap.model.AppComponent;
-import name.gudong.bootstrap.model.SearchModule;
+import name.gudong.bootstrap.module.SearchModule;
 
 @PerActivity
 @Component(dependencies = {

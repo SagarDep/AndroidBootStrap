@@ -4,9 +4,10 @@ import android.app.Application;
 
 import com.facebook.stetho.Stetho;
 
-import name.gudong.bootstrap.model.AppComponent;
-import name.gudong.bootstrap.model.AppModule;
-import name.gudong.bootstrap.model.DaggerAppComponent;
+import name.gudong.bootstrap.component.AppComponent;
+import name.gudong.bootstrap.component.DaggerAppComponent;
+import name.gudong.bootstrap.module.AppModule;
+import name.gudong.base.injection.NetModule;
 
 /**
  * Created by GuDong on 2017/2/6 17:25.
@@ -25,12 +26,12 @@ public class BootStrapApp extends Application {
     public void onCreate() {
         super.onCreate();
         setInstance(this);
-        Stetho.initializeWithDefaults(this);
         mAppComponent = createAppComponent();
+        Stetho.initializeWithDefaults(this);
     }
 
     private AppComponent createAppComponent() {
-        return DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+        return DaggerAppComponent.builder().netModule(new NetModule()).appModule(new AppModule(this)).build();
     }
 
     public static BootStrapApp get() {

@@ -1,4 +1,4 @@
-package name.gudong.bootstrap;
+package name.gudong.bootstrap.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,8 +6,8 @@ import android.widget.FrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import name.gudong.bootstrap.R;
 import name.gudong.bootstrap.component.DaggerMainComponent;
-import name.gudong.bootstrap.fragment.SearchFragment;
 import name.gudong.bootstrap.frame.BaseActivity;
 import name.gudong.bootstrap.presenter.MainPresenter;
 

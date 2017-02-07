@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.model;
+package name.gudong.bootstrap.module;
 
 import android.app.Application;
 import android.content.Context;

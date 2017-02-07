@@ -1,4 +1,4 @@
-package name.gudong.bootstrap.model;
+package name.gudong.model;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
